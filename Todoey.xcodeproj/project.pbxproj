@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		30C16762200A2F3400543D03 /* item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C16761200A2F3400543D03 /* item.swift */; };
+		3030D6132012B716005DE421 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3030D6112012B716005DE421 /* DataModel.xcdatamodeld */; };
+		3030D6152012E2FF005DE421 /* CategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3030D6142012E2FF005DE421 /* CategoryTableViewController.swift */; };
 		30E05BF22009F3BB007B6979 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E05BF12009F3BB007B6979 /* AppDelegate.swift */; };
 		30E05BF42009F3BB007B6979 /* TodoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E05BF32009F3BB007B6979 /* TodoListViewController.swift */; };
 		30E05BF72009F3BB007B6979 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30E05BF52009F3BB007B6979 /* Main.storyboard */; };
@@ -15,7 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		30C16761200A2F3400543D03 /* item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = item.swift; sourceTree = "<group>"; };
+		3030D6122012B716005DE421 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		3030D6142012E2FF005DE421 /* CategoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewController.swift; sourceTree = "<group>"; };
 		30E05BEE2009F3BB007B6979 /* Todoey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Todoey.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30E05BF12009F3BB007B6979 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		30E05BF32009F3BB007B6979 /* TodoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListViewController.swift; sourceTree = "<group>"; };
@@ -38,7 +40,7 @@
 		30C16763200A2F3E00543D03 /* Data Model */ = {
 			isa = PBXGroup;
 			children = (
-				30C16761200A2F3400543D03 /* item.swift */,
+				3030D6112012B716005DE421 /* DataModel.xcdatamodeld */,
 			);
 			path = "Data Model";
 			sourceTree = "<group>";
@@ -46,6 +48,7 @@
 		30C16764200A2F5200543D03 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				3030D6142012E2FF005DE421 /* CategoryTableViewController.swift */,
 				30E05BF32009F3BB007B6979 /* TodoListViewController.swift */,
 			);
 			path = Controller;
@@ -82,8 +85,8 @@
 				30C16764200A2F5200543D03 /* Controller */,
 				30C16765200A2F5E00543D03 /* Views */,
 				30C16763200A2F3E00543D03 /* Data Model */,
-				30E05BF82009F3BB007B6979 /* Assets.xcassets */,
 				30E05BFD2009F3BB007B6979 /* Info.plist */,
+				30E05BF82009F3BB007B6979 /* Assets.xcassets */,
 			);
 			path = Todoey;
 			sourceTree = "<group>";
@@ -160,8 +163,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				30E05BF42009F3BB007B6979 /* TodoListViewController.swift in Sources */,
-				30C16762200A2F3400543D03 /* item.swift in Sources */,
+				3030D6132012B716005DE421 /* DataModel.xcdatamodeld in Sources */,
 				30E05BF22009F3BB007B6979 /* AppDelegate.swift in Sources */,
+				3030D6152012E2FF005DE421 /* CategoryTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,6 +342,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		3030D6112012B716005DE421 /* DataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3030D6122012B716005DE421 /* DataModel.xcdatamodel */,
+			);
+			currentVersion = 3030D6122012B716005DE421 /* DataModel.xcdatamodel */;
+			path = DataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 30E05BE62009F3BB007B6979 /* Project object */;
 }
