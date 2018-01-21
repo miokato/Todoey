@@ -6,7 +6,7 @@
 //  Copyright © 2018 mio kato. All rights reserved.
 //
 
-import UIKit
+import UIKit    
 import RealmSwift
 
 @UIApplicationMain

@@ -8,26 +8,38 @@
 
 import UIKit
 import RealmSwift
+import ChameleonFramework
 
-class CategoryTableViewController: UITableViewController {
+class CategoryTableViewController: SwipeTableViewController {
     
     let realm = try! Realm()
     var categories: Results<Category>?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.rowHeight = 80.0
+        tableView.separatorStyle = .none
         loadCategory()
     }
     
     //MARK: - TableView DataSource Methods
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TodoCategoryCell", for: indexPath)
-        let category = categories?[indexPath.row]
+        let cell = super.tableView(tableView, cellForRowAt: indexPath)
         
-        cell.textLabel?.text = category?.name ?? "Not defined"
+        if let category = categories?[indexPath.row] {
+            cell.textLabel?.text = category.name
+            
+            guard let categoryColor = HexColor(category.colour) else {fatalError()}
+            cell.backgroundColor = categoryColor
+            cell.textLabel?.textColor = ContrastColorOf(categoryColor, returnFlat: true)
+        }
+
+        
         
         return cell
     }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return categories?.count ?? 1
     }
@@ -56,6 +68,7 @@ class CategoryTableViewController: UITableViewController {
         let action = UIAlertAction(title: "Add Category", style: .default) { (action) in
             let newCategory = Category()
             newCategory.name = textField.text!
+            newCategory.colour = UIColor.randomFlat.hexValue()
             
             self.save(category: newCategory)
         }
@@ -87,7 +100,20 @@ class CategoryTableViewController: UITableViewController {
         tableView.reloadData()
     }
     
+    override func updateCell(indexPath: IndexPath) {
+        if let item = self.categories?[indexPath.row] {
+            do {
+                try self.realm.write {
+                    self.realm.delete(item)
+                }
+            } catch {
+                print("Deleting Error \(error)")
+            }
+        }
+    }
 }
+
+
 
 
 
